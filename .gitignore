@@ -17,6 +17,7 @@
 /.idea/.gitignore
 /.idea/jarRepositories.xml
 ./.idea/navEditor.xml
+/.idea/
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build
