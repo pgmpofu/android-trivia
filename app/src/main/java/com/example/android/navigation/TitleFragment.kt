@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +25,8 @@ class TitleFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private lateinit var playButton : Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -32,8 +38,12 @@ class TitleFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
+        playButton = view?.findViewById(R.id.playButton)!!
+
+        playButton.setOnClickListener { Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_gameFragment) }
         return inflater.inflate(R.layout.fragment_title, container, false)
     }
+
 
     companion object {
         /**
