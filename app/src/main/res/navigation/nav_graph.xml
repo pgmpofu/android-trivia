@@ -26,6 +26,8 @@
         <action
             android:id="@+id/action_gameFragment_to_gameOverFragment22"
             app:destination="@id/gameOverFragment2"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
             app:popUpTo="@id/gameFragment"
             app:popUpToInclusive="true" />
     </fragment>
