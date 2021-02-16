@@ -9,6 +9,7 @@ import android.widget.Button
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.android.navigation.R.id
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,11 +38,12 @@ class TitleFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        playButton = view?.findViewById(R.id.playButton)!!
 
-        playButton.setOnClickListener { Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_gameFragment) }
-        return inflater.inflate(R.layout.fragment_title, container, false)
+
+        val inflatedView = inflater.inflate(R.layout.fragment_title, container, false)
+        this.playButton = inflatedView.findViewById(R.id.playButton)
+        this.playButton.setOnClickListener { Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_gameFragment) }
+        return inflatedView
     }
 
 
